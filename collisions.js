@@ -85,7 +85,7 @@ function staticResolution(ball, other, ballDist)
     other.setPosition(other.getPosition().sub(direction.mul(displacement)));
 }
 
-function dynamicResolution(ball, other, ballDist)
+function dynamicResolution(ball, other)
 {
     //get unit vector pointing from ball to other
     let normal = other.getPosition().sub(ball.getPosition()).normalize();
@@ -130,5 +130,5 @@ function handleCollision(ball, other)
     if (inpStatic.checked) staticResolution(ball, other, ballDist);
 
     //then, calculate dynamic physics (bounces)
-    if (inpDynamic.checked) dynamicResolution(ball, other, ballDist);
+    if (inpDynamic.checked) dynamicResolution(ball, other);
 }
