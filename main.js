@@ -102,7 +102,7 @@ function update()
 
         if (newPosition.x + radius > cnvMain.width)
         {
-            newPosition.x = newPosition.x - radius;
+            newPosition.x = cnvMain.width - (cnvMain.width - (newPosition.x + radius)) - radius;
             newVelocity.x = -newVelocity.x;
         }
 
@@ -114,7 +114,7 @@ function update()
 
         if (newPosition.y + radius > cnvMain.height)
         {
-            newPosition.y = newPosition.y - radius;
+            newPosition.y = cnvMain.height - (cnvMain.height - (newPosition.y + radius)) - radius;
             newVelocity.y = -newVelocity.y;
         }
 
