@@ -97,25 +97,25 @@ function update()
         if (newPosition.x - radius < 0)
         {
             newPosition.x = 2 * radius - newPosition.x;
-            newVelocity.x = -newVelocity.x;
+            newVelocity.x = Math.abs(newVelocity.x);
         }
 
         if (newPosition.x + radius > cnvMain.width)
         {
-            newPosition.x = cnvMain.width - (cnvMain.width - (newPosition.x + radius)) - radius;
-            newVelocity.x = -newVelocity.x;
+            newPosition.x = 2 * (cnvMain.width - radius) - newPosition.x;
+            newVelocity.x = -Math.abs(newVelocity.x);
         }
 
         if (newPosition.y - radius < 0)
         {
             newPosition.y = 2 * radius - newPosition.y;
-            newVelocity.y = -newVelocity.y;
+            newVelocity.y = Math.abs(newVelocity.y);
         }
 
         if (newPosition.y + radius > cnvMain.height)
         {
-            newPosition.y = cnvMain.height - (cnvMain.height - (newPosition.y + radius)) - radius;
-            newVelocity.y = -newVelocity.y;
+            newPosition.y = 2 * (cnvMain.height - radius) - newPosition.y;
+            newVelocity.y = -Math.abs(newVelocity.y);
         }
 
         ball.setPosition(newPosition);
